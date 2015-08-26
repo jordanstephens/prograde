@@ -1,0 +1,23 @@
+{
+  "name": "prograde",
+  "version": "1.0.0",
+  "description": "Visualize orbital ground tracks for arbitrary parameters",
+  "main": "prograde.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jordan Stephens",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jordanstephens/prograde.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "sgp4": "^1.0.7"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^4.0.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

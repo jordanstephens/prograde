@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prograde</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <link href="https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css" rel="stylesheet" />
+  <link href="./css/main.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1><a href="./">Prograde</a></h1>
+  </header>
+
+  <section class="main-content">
+    <ul class="param-container">
+      <li>
+        <label for="sampleTime">Sample Time</label>
+        <label for="sampleTime" class="short-label">t</label>
+        <input type="range" class="param-controller" id="sampleTime" min="10" max="10080" step="1" value="400" data-unit="min" />
+        <div id="sampleTime-value" class="param-value"></div>
+      </li>
+      <li>
+        <label for="semimajorAxis">Semi-major Axis</label>
+        <label for="semimajorAxis" class="short-label">a</label>
+        <input type="range" class="param-controller" id="semimajorAxis" min="6000" max="40000" step="50" value="8000" data-unit="km" />
+        <div id="semimajorAxis-value" class="param-value"></div>
+      </li>
+      <li>
+        <label for="eccentricity">Eccentricity</label>
+        <label for="eccentricity" class="short-label">e</label>
+        <input type="range" class="param-controller" id="eccentricity" min="0.0" max="0.9" step="0.001" value="0.0" />
+        <div id="eccentricity-value" class="param-value"></div>
+      </li>
+      <li>
+        <label for="inclination">Inclination</label>
+        <label for="inclination" class="short-label">i</label>
+        <input type="range" class="param-controller" id="inclination" min="0.0" max="180.0" step="1.0" value="30.0" data-unit="&deg;" />
+        <div id="inclination-value" class="param-value"></div>
+      </li>
+      <li>
+        <label for="rightAscension">Right Ascension</label>
+        <label for="rightAscension" class="short-label">&Omega;</label>
+        <input type="range" class="param-controller" id="rightAscension" min="0.0" max="360.0" step="1.0" value="0.0" data-unit="&deg;" />
+        <div id="rightAscension-value" class="param-value"></div>
+      </li>
+      <li>
+        <label for="argumentOfPerigee">Arg of Perigee</label>
+        <label for="argumentOfPerigee" class="short-label">&omega;</label>
+        <input type="range" class="param-controller" id="argumentOfPerigee" min="0.0" max="360.0" step="1.0" value="0.0" data-unit="&deg;" />
+        <div id="argumentOfPerigee-value" class="param-value"></div>
+      </li>
+    </ul>
+    <div id="map" class="map-container"></div>
+  </section>
+
+  <script src="https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js"></script>
+  <script>
+    L.mapbox.accessToken = "pk.eyJ1Ijoiam9yZGFuc3RlcGhlbnMiLCJhIjoiTXUtM3dnNCJ9.HuHgzd-j7PC8fSOOIUuGow";
+    var map = L.mapbox.map("map", "mapbox.outdoors", {
+      maxBounds: L.latLngBounds(L.latLng(-90, -360), L.latLng(90, 360)),
+      minZoom: 0
+    }).setView([0, 0], initialZoomForWindowHeight());
+
+
+    function initialZoomForWindowHeight() {
+      var windowHeight = window.innerHeight;
+      if (windowHeight < 260) {
+        return 0;
+      } else if (windowHeight < 520) {
+        return 1;
+      } else {
+        return 2;
+      }
+    }
+  </script>
+  <script src="./dist/prograde.js"></script>
+</body>
+</html>

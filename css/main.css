@@ -1,0 +1,91 @@
+@import url(http://fonts.googleapis.com/css?family=Lora);
+
+.leaflet-control-container .leaflet-top.leaflet-left {
+  margin-top: 78px;
+}
+
+input[type="range"] {
+  cursor: pointer;
+  max-width: 100%;
+}
+
+body {
+  color: whitesmoke;
+  margin:0; padding:0;
+  font-family: "Lora", serif;
+  font-size: 13px;
+}
+
+header {
+  background-color: hsl(169, 66%, 40%);
+  height: 40px;
+  padding: 2px 20px;
+}
+
+header h1 {
+  font-size: 26px;
+  margin: 0; padding: 0;
+}
+
+header, header h1 a {
+  color: whitesmoke;
+}
+
+header h1 a {
+  text-decoration: none;
+}
+
+.main-content {
+  position: absolute;
+  top: 40px;
+  right: 0; bottom: 0; left: 0;
+}
+
+.param-container {
+  background-color: hsla(169, 66%, 40%, 0.75);
+  color: whitesmoke;
+  list-style: none;
+  font-family: sans-serif;
+  margin: 0; padding: 0;
+  overflow: auto;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+}
+
+.param-container li {
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  padding: 12px 4px;
+  text-align: center;
+  width: 16%;
+}
+
+.param-container label { display: block; }
+.param-container .short-label { display: none; }
+.param-value { margin-top: 4px; }
+
+.map-container { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+@media (max-width: 840px) {
+  .param-container { font-size: 11px; }
+}
+
+@media (max-width: 600px) {
+  .param-container label { display: none; }
+  .param-container .short-label {
+    display: block;
+    font-size: 14px;
+    font-family: serif;
+  }
+}
+
+@media (max-height: 420px) {
+  header { height: 22px; }
+  .main-content { top: 22px; }
+
+  header h1 {
+    font-size: 16px;
+  }
+}
