@@ -22,17 +22,38 @@ header {
   padding: 2px 20px;
 }
 
-header h1 {
-  font-size: 26px;
+header .mark {
+  float: left;
+  font-size: 16px;
+  font-weight: lighter;
   margin: 0; padding: 0;
+  text-decoration: none;
 }
 
-header, header h1 a {
+.mark, .header-links {
+  line-height: 20px;
+}
+
+header, header .mark {
   color: whitesmoke;
 }
 
-header h1 a {
-  text-decoration: none;
+.header-links {
+  float: right;
+  font-size: 11px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.header-links li { float: left; }
+.header-links li:first-child:after {
+  content: "\02022";
+  margin: 0 4px;
+}
+.header-links a, .header-links li:first-child:after {
+  color: whitesmoke;
 }
 
 .main-content {
