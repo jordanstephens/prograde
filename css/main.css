@@ -1,8 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Lora);
 
-.leaflet-control-container .leaflet-top.leaflet-left {
-  margin-top: 78px;
-}
+.leaflet-control-container .leaflet-top.leaflet-left { margin-top: 78px; }
 
 input[type="range"] {
   cursor: pointer;
@@ -18,7 +16,8 @@ body {
 
 header {
   background-color: hsl(169, 66%, 40%);
-  height: 40px;
+  height: 22px;
+  overflow: auto;
   padding: 2px 20px;
 }
 
@@ -58,7 +57,7 @@ header, header .mark {
 
 .main-content {
   position: absolute;
-  top: 40px;
+  top: 22px;
   right: 0; bottom: 0; left: 0;
 }
 
@@ -80,7 +79,7 @@ header, header .mark {
   float: left;
   padding: 12px 4px;
   text-align: center;
-  width: 16%;
+  width: 16.666%;
 }
 
 .param-container label { display: block; }
@@ -91,6 +90,7 @@ header, header .mark {
 
 @media (max-width: 840px) {
   .param-container { font-size: 11px; }
+  .leaflet-control-container .leaflet-top.leaflet-left { margin-top: 74px; }
 }
 
 @media (max-width: 600px) {
@@ -103,10 +103,6 @@ header, header .mark {
 }
 
 @media (max-height: 420px) {
-  header { height: 22px; }
-  .main-content { top: 22px; }
-
-  header h1 {
-    font-size: 16px;
-  }
+  .param-container li { padding: 4px; }
+  .leaflet-control-container .leaflet-top.leaflet-left { margin-top: 62px; }
 }
